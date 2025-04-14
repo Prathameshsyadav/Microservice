@@ -2,7 +2,7 @@ spring:
   application:
     name: Subject-Services
   config:
-    import: optional:configserver://localhost:9091
+    import: optional:configserver:http://localhost:9091
 
 server:
   port: 8082
