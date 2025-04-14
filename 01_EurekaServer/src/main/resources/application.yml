@@ -1,8 +1,7 @@
 spring:
   application:
     name: 01_EurekaServer
+  config:
+    import: optional:configserver://localhost:9999
 server:
   port: 8761	
-eureka:
-  client:
-    register-with-eureka: false		

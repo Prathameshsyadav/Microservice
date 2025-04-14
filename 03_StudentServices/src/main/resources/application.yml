@@ -1,22 +1,8 @@
 spring:
   application:
     name: Student-Service
-  datasource:
-    url: jdbc:mysql://localhost:3306/microservices
-    username: root
-    password: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-  boot:
-    admin:
-      client:
-        url: http://localhost:1111
+  config:
+    import: optional:configserver://localhost:9999
 server:
   port: 8081
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+

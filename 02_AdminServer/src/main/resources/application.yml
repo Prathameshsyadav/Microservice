@@ -1,5 +1,7 @@
 spring:
   application:
     name: 02_AdminServer
+  config:
+    import: optional:configserver://localhost:9999
 server:
   port: 1111
