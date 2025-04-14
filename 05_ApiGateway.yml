@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: Api-Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: api-1
+          uri: lb://STUDENT-SERVICE
+          predicates:
+            - Path=/student,/student/**
+        - id: api-2
+          uri: lb://SUBJECT-SERVICES
+          predicates:
+            - Path=/subject,/subject/**
+
+server:
+  port: 3333
+
