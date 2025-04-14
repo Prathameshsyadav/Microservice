@@ -2,7 +2,7 @@ spring:
   application:
     name: Student-Service
   config:
-    import: optional:configserver://localhost:9999
+    import: optional:configserver://localhost:9091
 server:
   port: 8081
 
