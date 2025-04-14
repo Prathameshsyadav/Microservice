@@ -17,18 +17,21 @@ public class MyFilter implements GlobalFilter {
 
 	@Override
 	public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+//		
+//		ServerHttpRequest request = exchange.getRequest();
+//		HttpHeaders headers = request.getHeaders();
+//		
+//		Set<String> keySet = headers.keySet();
+//		if(!keySet.contains("secreat")) {
+//			throw new RuntimeException("Invalid request");
+//		}
+//		List<String> list = headers.get("secreat");
+//		if(!list.get(0).equals("ashokit@123")) {
+//			throw new RuntimeException("Invalid Request");
+//		}
+//		
 		
-		ServerHttpRequest request = exchange.getRequest();
-		HttpHeaders headers = request.getHeaders();
-		
-		Set<String> keySet = headers.keySet();
-		if(!keySet.contains("secreat")) {
-			throw new RuntimeException("Invalid request");
-		}
-		List<String> list = headers.get("secreat");
-		if(!list.get(0).equals("ashokit@123")) {
-			throw new RuntimeException("Invalid Request");
-		}
+		System.out.println("Filter loaded");
 		
 		return chain.filter(exchange);
 	}
